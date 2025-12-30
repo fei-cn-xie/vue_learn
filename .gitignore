@@ -1,0 +1,15 @@
+public/
+node_modules/
+*.log
+DS_Store
+Thumbs.db
+dist/
+.vscode/
+.env
+.env.local
+.env.*.local
+.idea/
+*.iml
+npm-debug.log*
+
+
