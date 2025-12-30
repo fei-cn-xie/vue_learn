@@ -373,6 +373,13 @@ h2 { margin: 0; font-size: 17px; color: #0f172a; letter-spacing: 0.5px; }
 h3 { margin: 0; font-size: 13px; color: #475569; font-weight: 700; }
 .subtitle { font-size: 10px; color: #94a3b8; letter-spacing: 1px; }
 
-.chart-body { flex: 1; padding: 10px; min-height: 0; }
-.echart-instance { width: 100%; height: 100%; }
+.chart-body { flex: 1; padding: 10px; min-height: 0;  position: relative;}
+.echart-instance { 
+  /* 【修改】从 width/height 100% 改为四周锚定 */
+  position: absolute; 
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
 </style>
