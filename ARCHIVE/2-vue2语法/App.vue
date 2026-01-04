@@ -1,5 +1,9 @@
 <template>
-    <Person />
+    <!-- 1. 结构 -->
+     <div class="app">
+        <h1> Hello World!!!</h1>
+        <Person />
+     </div>
 </template>
 
 <script lang="ts">
@@ -18,9 +22,8 @@ export default {
 /* 3. 样式美化 */
 .app {
     background-color: #ddd;
-    box-shadow: 58 58 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-
     padding: 20px;
 }
 
