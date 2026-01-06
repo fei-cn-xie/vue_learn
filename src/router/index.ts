@@ -11,7 +11,9 @@ import { createRouter, createWebHistory } from "vue-router";
  * 2. 点击导航，视觉上消失的组件，默认是被unmounted的，需要时才会重新挂载
  */
 
-// 第二步：创建路由器
+// TODO
+// ATTENTION 
+// 第二步：创建路由器 TODO
 const router = createRouter({
     history: createWebHistory(), // 创建路由器一定要指定路由器的工作模式
     routes: [ // 一个一个的路由规则
