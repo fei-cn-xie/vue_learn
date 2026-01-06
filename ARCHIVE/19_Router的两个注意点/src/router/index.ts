@@ -1,5 +1,4 @@
-
-// START 创建一个路由器，并暴露出去
+//START 创建一个路由器，并暴露出去
 
 //第一步：引入路由的createRouter
 import AboutView from "@/pages/AboutView.vue";

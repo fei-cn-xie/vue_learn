@@ -1,16 +1,11 @@
 <template>
     <div class="app">
-
         <!-- 1.1 导航区 -->
          <h2 class="title">路由测试</h2>
-         <div class="navigate"> 
-
+         <div class="navigate">
             <RouterLink to="/home" active-class="focus-content">Home</RouterLink>
-            <!-- 第一种 -->
-            <RouterLink :to="{name: 'xinwen'}" active-class="focus-content">News</RouterLink>
-            <!-- -->
-            <!-- 路由to的两种写法 -->
-            <RouterLink :to="{path:'/about'}" active-class="focus-content">About</RouterLink>
+            <RouterLink to="/news" active-class="focus-content">News</RouterLink>
+            <RouterLink to="/about" active-class="focus-content">About</RouterLink>
             
          </div>
 

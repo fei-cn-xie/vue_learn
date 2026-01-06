@@ -11,9 +11,11 @@ import { createRouter, createWebHistory } from "vue-router";
  * 2. 点击导航，视觉上消失的组件，默认是被unmounted的，需要时才会重新挂载
  */
 
+// TODO
+// ATTENTION 
 // 第二步：创建路由器 TODO
 const router = createRouter({
-    // 路由器的两种工作模式
+    // START 路由器的两种工作模式
     /**
      * 1. history模式：
      *        使用方式：history: createWebHistory()
@@ -28,38 +30,12 @@ const router = createRouter({
     history: createWebHistory(), // 创建路由器一定要指定路由器的工作模式
     routes: [ // 一个一个的路由规则
         {
-            name: "zhuye", 
             path: "/home",
             component: import("@/pages/HomeView.vue") 
         },
         {
-            name: 'xinwen',
             path: '/news',
             component: import("@/pages/NewsView.vue"),
-            children: [
-                {
-                    name: 'news-detail',
-                    path: 'detail/:id/:title/:content/:other?' , // 添加问号？表示该参数可以不用
-                    component: import("@/pages/Detail.vue"),
-                    
-                    //ATTENTION 第一种写法 
-                    // props: true // ATTENTION 这样可以直接在Detail.vue中defineProps(['id','title','content',':other'])这些参数(newsView中定义的），注意参数名需要和实际相同
-
-                    // ATTENTION 第二种写法 函数写法
-                    props(route){
-                        return route.params; // 可以返回route的任意信息
-                    },
-
-                    // ATTENTION 第三种写法 对象写法 用得很少，因为只能定义一次对象
-                    // props:{
-                    //     a: "AAA",
-                    //     b: "BBB",
-                    //     c: "CCC"
-                    // }
-
-
-                }
-            ]
         },
         {
             path: '/about',

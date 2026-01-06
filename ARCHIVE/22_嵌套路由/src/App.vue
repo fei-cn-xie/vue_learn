@@ -6,9 +6,9 @@
          <div class="navigate"> 
 
             <RouterLink to="/home" active-class="focus-content">Home</RouterLink>
-            <!-- 第一种 -->
+            <!-- ATTENTION第一种 -->
             <RouterLink :to="{name: 'xinwen'}" active-class="focus-content">News</RouterLink>
-            <!-- -->
+            <!-- ATTENTION -->
             <!-- 路由to的两种写法 -->
             <RouterLink :to="{path:'/about'}" active-class="focus-content">About</RouterLink>
             

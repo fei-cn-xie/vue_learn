@@ -3,19 +3,19 @@
    <div class="news">
     <ul>
         <li v-for="news in NewsList" :key="news.id">
-            <!--params传参 路由中需要先定义才能用 -->
-             <!-- 第一种写法 -->
-            <!-- <RouterLink :to="`/news/detail/${news.id}/${news.title}/${news.content}`" >{{ news.title }}</RouterLink> -->
-             <!-- 第二种写法 -->
-            <RouterLink :to="{
-                name: 'news-detail', //  这里必须使用路由的name，path无效
-                params: {
+            <!-- ATTENTION query传参, 通过这个路由对应的vue组件接收 -->
+            <!-- 第一种写法 -->
+            <!-- <RouterLink :to="`/news/detail?id=${news.id}&title=${news.title}&content=${news.content}`" >{{ news.title }}</RouterLink> -->
+            <!-- 第二种写法 -->
+             <RouterLink :to="{
+                path: '/news/detail',
+                query:{
                     id: news.id,
                     title: news.title,
                     content: news.content
                 }
-            }"> {{ news.title }}</RouterLink>
-            
+             }">{{ news.title }}</RouterLink>
+             
         </li>
     </ul>
     <div class="news-content">
