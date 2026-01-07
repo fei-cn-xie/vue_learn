@@ -4,6 +4,7 @@
     <ul>
         <li v-for="news in NewsList" :key="news.id">
             <button @click="directNews(news)" >查看新闻</button>{{ news.title }}
+            
         </li>
     </ul>
     <div class="news-content">

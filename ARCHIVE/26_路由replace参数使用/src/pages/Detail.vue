@@ -3,16 +3,14 @@
         <li>编号: {{  route.params.id }} </li>
         <li>标题: {{ route.params.title }} </li>
         <li>标题: {{ route.params.content }}</li>
-        <img v-for="value in dogList" style="height: 100px;" :src="value"/>
     </div>
-    
     <button @click="addDog">Add Dog</button>
 </template>
 
 <script lang="ts" setup>
 import axios from 'axios';
 import { number } from 'echarts';
-import { reactive, ref , watch } from 'vue';
+import { reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();

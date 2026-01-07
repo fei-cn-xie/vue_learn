@@ -5,7 +5,7 @@
          <h2 class="title">路由测试</h2>
          <div class="navigate"> 
 
-            <!--  使用replace无记录 -->
+            <!-- ATTENTION 使用replace无记录 -->
             <RouterLink  to="/home" active-class="focus-content">Home</RouterLink>
             <!-- 第一种 -->
             <RouterLink replace :to="{name: 'xinwen'}" active-class="focus-content">News</RouterLink>

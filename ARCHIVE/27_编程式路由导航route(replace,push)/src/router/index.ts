@@ -41,9 +41,22 @@ const router = createRouter({
                     name: 'news-detail',
                     path: ':id/:title/:content/:other?' , // 添加问号？表示该参数可以不用
                     component: import("@/pages/Detail.vue"),
+                    
+                    // 第一种写法 
+                    // props: true //  这样可以直接在Detail.vue中defineProps(['id','title','content',':other'])这些参数(newsView中定义的），注意参数名需要和实际相同
+
+                    //  第二种写法 函数写法
                     props(route){
                         return route.params; // 可以返回route的任意信息
                     },
+
+                    //  第三种写法 对象写法 用得很少，因为只能定义一次对象
+                    // props:{
+                    //     a: "AAA",
+                    //     b: "BBB",
+                    //     c: "CCC"
+                    // }
+
 
                 }
             ]
@@ -51,11 +64,6 @@ const router = createRouter({
         {
             path: '/about',
             component: AboutView
-        },
-        // ATTENTION 重定向
-        {
-            path: '/',
-            redirect: '/home'
         }
     ]
 })

@@ -12,7 +12,7 @@
 <script lang="ts" setup>
 import axios from 'axios';
 import { number } from 'echarts';
-import { reactive, ref , watch } from 'vue';
+import { reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();

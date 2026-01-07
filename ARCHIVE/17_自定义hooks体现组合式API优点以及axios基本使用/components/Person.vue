@@ -16,6 +16,7 @@
 import useSum from '@/hooks/useSum';
 import useDog from '@/hooks/useDog';
 
+// ATTENTION 自定义勾子函数
 let {sum,addSum} = useSum();
 let {dogList,addDog,clearDog} = useDog()
 

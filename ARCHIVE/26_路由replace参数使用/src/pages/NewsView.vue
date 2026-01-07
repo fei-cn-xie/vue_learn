@@ -3,7 +3,16 @@
    <div class="news">
     <ul>
         <li v-for="news in NewsList" :key="news.id">
-            <button @click="directNews(news)" >查看新闻</button>{{ news.title }}
+            <!-- 使用replace表示直接替换route.path, 而不是push -->
+            <RouterLink replace :to="{
+                name: 'news-detail', //  这里必须使用路由的name，path无效
+                params: {
+                    id: news.id,
+                    title: news.title,
+                    content: news.content
+                }
+            }"> {{ news.title }}</RouterLink>
+            
         </li>
     </ul>
     <div class="news-content">
@@ -15,10 +24,7 @@
 
 <script lang="ts" setup>
 import { ref, reactive } from 'vue';
-import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router';
-
-const route = useRoute();
-const router = useRouter();
+import { RouterLink, RouterView } from 'vue-router';
 
 const NewsList = reactive([
     {
@@ -37,18 +43,6 @@ const NewsList = reactive([
         content: "晚上十二点半睡觉"
     }
 ])
-// ATTENTION
-/**
- * 编程式导航使用场景： 
- * 1. 用户点击跳转
- * 2. 定时跳转
- * 3. 登录成功，自动跳转到个人中心
- * 4. 鼠标滑动到某处，自动跳转
- */
-function directNews(news:any){
-    console.log("查看新闻", news)
-    router.replace("/news/" + news.id + "/" + news.title + "/" + news.content);
-}
 
 </script>
 
