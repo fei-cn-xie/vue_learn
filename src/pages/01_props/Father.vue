@@ -15,6 +15,7 @@
 	let toy = ref('')
 	// 方法
 	function getToy(value:string){
+		console.log("TOY __", toy)
 		toy.value = value
 	}
 </script>

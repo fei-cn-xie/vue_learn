@@ -10,7 +10,7 @@
 	import { ref } from "vue";
 	// 数据
 	let toy = ref('奥特曼')
-	// 声明事件
+	// ATTENTION 声明事件 共给父组件使用
 	const emit =  defineEmits(['send-toy'])
 </script>
 
