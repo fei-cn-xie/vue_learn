@@ -8,8 +8,7 @@
 import { ref } from 'vue';
 import Count from './components/Count.vue';
 import LoveChat from './components/LoveChat.vue';
-import { useRouter } from 'vue-router';
-const router = useRouter();
+
 
 </script>
 

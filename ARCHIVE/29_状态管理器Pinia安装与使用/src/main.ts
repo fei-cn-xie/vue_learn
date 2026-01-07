@@ -8,7 +8,7 @@ import { createPinia } from 'pinia'
 
 const app = createApp(App)
 
-// 使用PINIA
+// ATTENTION 使用PINIA
 
 // 第一步：创建Pinia （创建前使用 npm i pinia下载）
 const pinia = createPinia();
