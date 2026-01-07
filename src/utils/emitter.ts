@@ -1,6 +1,7 @@
 // 引入mitt
 import mitt from 'mitt'
 
+// ATTENTION
 // 调用mitt得到emitter，emitter能：绑定事件、触发事件
 const emitter = mitt()
 
@@ -16,13 +17,13 @@ emitter.on('test2',()=>{
 setInterval(() => {
   emitter.emit('test1')
   emitter.emit('test2')
-}, 1000);
+}, 1000); // 每隔一秒触发事件
 
 setTimeout(() => {
   // emitter.off('test1')
   // emitter.off('test2')
   emitter.all.clear()
-}, 3000); */
+}, 3000); */ // 3秒后出发事件
 
 
 // 暴露emitter
