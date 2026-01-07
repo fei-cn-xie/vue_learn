@@ -1,21 +1,16 @@
-
 import {createApp} from 'vue'
-
 import App from './App.vue'
-
+import {createPinia} from 'pinia'
 import router from './router'
-import { createPinia } from 'pinia'
 
+// 创建应用
 const app = createApp(App)
+// 创建pinia
+const pinia = createPinia()
 
-// 使用PINIA
-
-// 第一步：创建Pinia （创建前使用 npm i pinia下载）
-const pinia = createPinia();
-
-// 第二步：安装Pinia
+// 安装插件
 app.use(pinia)
-
+// 安装路由器
 app.use(router)
-
-app.mount("#app")
+// 挂载应用
+app.mount('#app')
