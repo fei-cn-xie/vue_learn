@@ -1,19 +1,19 @@
 <template>
 
   <!-- 2 v-model 用在组件标签上 --> 
-   <input 
+   <!-- <input 
    type="text"
    :value="modelValue"
    @input="emit('update:modelValue', (<HTMLInputElement>$event.target).value)"
-   />
+   /> -->
    <!-- $event到底是什么？啥时候能$event.target -->
     <!-- 1. 对于原生事件，$event就是事件对象 ==> 能`.target`-->
     <!-- 2. 对于自定义事件, $event就是触发事件时，所传递的数据不能`.target` -->
 
 
 
-   <!-- 3  -->
-  <!-- <input 
+   <!-- 3 v-model 修改modelValue  -->
+  <input 
     type="text" 
     :value="ming"
     @input="emit('update:ming',(<HTMLInputElement>$event.target).value)"
@@ -23,18 +23,18 @@
     type="text" 
     :value="mima"
     @input="emit('update:mima',(<HTMLInputElement>$event.target).value)"
-  > -->
+  >
 </template>
 
 <script setup lang="ts" name="AtguiguInput">
 
   // 2 v-model用在组件标签上
-  defineProps(['modelValue'])
-  const emit = defineEmits(['update:modelValue'])
+  // defineProps(['modelValue'])
+  // const emit = defineEmits(['update:modelValue'])
 
-
-  // defineProps(['ming','mima'])
-  // const emit = defineEmits(['update:ming','update:mima'])
+  // 3 
+  defineProps(['ming','mima'])
+  const emit = defineEmits(['update:ming','update:mima']) // 'update:xxx', 'update:xxx'
 </script>
 
 <style scoped>

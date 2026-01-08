@@ -8,15 +8,14 @@
     <!-- 方式二：<input type="text" :value="username" @input="username = (<HTMLInputElement>$event.target).value"> -->
 
     <!--2 v-model用在组件标签上 -->
-     <AtguiguInput v-model="username"/>
+     <!-- <AtguiguInput v-model="username"/> -->
     <!--底层写法： <AtguiguInput 
       :modelValue="username" 
       @update:modelValue="username = $event"
     /> -->
 
-    <!-- 3 -->
-    <!-- 修改modelValue -->
-    <!-- <AtguiguInput v-model:ming="username" v-model:mima="password"/> -->
+    <!-- 3 修改modelValue -->
+    <AtguiguInput v-model:ming="username" v-model:mima="password"/>
   </div>
 </template>
 
