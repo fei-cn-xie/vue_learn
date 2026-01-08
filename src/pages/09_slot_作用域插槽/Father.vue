@@ -22,6 +22,7 @@
         </template>
       </Game>
 
+      <!-- ATTENTION 访问默认插槽 -->
       <Game>
         <template #default="{youxi}">
           <h3 v-for="g in youxi" :key="g.id">{{ g.name }}</h3>

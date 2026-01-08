@@ -1,12 +1,20 @@
 <template>
   <div class="child">
-    <h3>我是子组件</h3>
+    <h3>我是子组件 {{ money }}</h3>
+    <h4>MyFace : {{ erziFace }}</h4>
     <GrandChild/>
   </div>
 </template>
 
 <script setup lang="ts" name="Child">
-  import GrandChild from './GrandChild.vue'
+  import { inject, provide, ref } from 'vue';
+import GrandChild from './GrandChild.vue'
+
+  let {money,updateMoney} = inject('moneyContext',{money:0,updateMoney:(param:number)=>{}})
+  let erziFace = ref("big face");
+
+  provide("face",erziFace)
+
 </script>
 
 <style scoped>

@@ -2,33 +2,49 @@
   <div class="father">
     <h3>父组件</h3>
     <div class="content">
-      <Category title="热门游戏列表">
+      <!-- 1. 默认插槽 -->
+       <!-- 2. 具名插槽 -->
+        <!-- 3. 作用域插槽 -->
+      <Game :title="games"> 
         <ul>
-          <li v-for="g in games" :key="g.id">{{ g.name }}</li>
+          <li v-for="value in games.data">{{ value }}</li>
         </ul>
-      </Category>
-      <Category title="今日美食城市">
-        <img :src="imgUrl" alt="">
-      </Category>
-      <Category title="今日影视推荐">
-        <video :src="videoUrl" controls></video>
-      </Category>
+      </Game>
+      <Game :title="food" style="width: 200px;"> 
+        <img :src="food.data" />
+      </Game>
+      <Game :title="video">
+        <video :src="video.data" style="width: 200px;" controls ></video>
+      </Game>
+      
+
     </div>
   </div>
 </template>
 
 <script setup lang="ts" name="Father">
-  import Category from './Category.vue'
-  import { ref,reactive } from "vue";
+import { reactive } from 'vue';
+import Game from './Game.vue'
 
-  let games = reactive([
-    {id:'asgytdfats01',name:'英雄联盟'},
-    {id:'asgytdfats02',name:'王者农药'},
-    {id:'asgytdfats03',name:'红色警戒'},
-    {id:'asgytdfats04',name:'斗罗大陆'}
-  ])
-  let imgUrl = ref('https://z1.ax1x.com/2023/11/19/piNxLo4.jpg')
-  let videoUrl = ref('http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4')
+let games = reactive({
+  title: '游戏',
+  data: [
+  
+  'ori',
+  'jat',
+  'java'
+]
+})
+
+let food = reactive({
+  title: '美食',
+  data: 'https://z1.ax1x.com/2023/11/19/piNxLo4.jpg',
+})
+
+let video = reactive({
+  title: '视频',
+  data: 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4'
+})
 
 </script>
 
@@ -39,7 +55,9 @@
     border-radius: 10px;
   }
   .content {
+    /* 横向排列 */
     display: flex;
+    /* 均匀铺开 */
     justify-content: space-evenly;
   }
   img,video {
