@@ -4,6 +4,8 @@
 		<h4>房产：{{ house }}</h4>
 		<button @click="changeToy">修改Child1的玩具</button>
 		<button @click="changeComputer">修改Child2的电脑</button>
+
+		<!--ATTENTION $refs -->
 		<button @click="getAllChild($refs)">让所有孩子的书变多</button>
 		<Child1 ref="c1"/>
 		<Child2 ref="c2"/>
@@ -13,15 +15,19 @@
 <script setup lang="ts" name="Father">
 	import Child1 from './Child1.vue'
 	import Child2 from './Child2.vue'
-	import { ref,reactive } from "vue";
+	import { ref,reactive, useTemplateRef, toRefs } from "vue";
 	let c1 = ref()
 	let c2 = ref()
 
-	// 注意点：当访问obj.c的时候，底层会自动读取value属性，因为c是在obj这个响应式对象中的
+	let refrences = toRefs(useTemplateRef('c1'))
+	console.log("refrences",refrences)
+
+
+	// ATTENTION 注意点：当访问obj.c的时候，底层会自动读取value属性，因为c是在obj这个响应式对象中的
 	/* let obj = reactive({
 		a:1,
 		b:2,
-		c:ref(3)
+		c:ref(3) // 因为这里c在一个响应式对象中，访问时自动拆包，因此再访问时不用`.value`
 	})
 	let x = ref(4)
 
@@ -35,6 +41,7 @@
 	let house = ref(4)
 	// 方法
 	function changeToy(){
+		// ATTENTION 要操作子组件的ref='c1'， 需要在子组件中使用defineExpose([{toy,book}])暴露参数，父组件才能使用
 		c1.value.toy = '小猪佩奇'
 	}
 	function changeComputer(){
@@ -46,7 +53,7 @@
 			refs[key].book += 3
 		}
 	}
-	// 向外部提供数据
+	// 向外部提供数据 // ATTENTION 父组件给子组件暴露数据，子组件才可以访问到数据
 	defineExpose({house})
 </script>
 

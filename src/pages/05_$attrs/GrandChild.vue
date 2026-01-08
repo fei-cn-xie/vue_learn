@@ -13,6 +13,7 @@
 
 <script setup lang="ts" name="GrandChild">
 	defineProps(['a','b','c','d','x','y','updateA'])
+	
 </script>
 
 <style scoped>

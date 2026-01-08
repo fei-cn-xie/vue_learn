@@ -5,6 +5,7 @@
 		<h4>b：{{b}}</h4>
 		<h4>c：{{c}}</h4>
 		<h4>d：{{d}}</h4>
+		<!-- 父组件可以给子组件传递数据，也可以传递函数方法 -->
 		<Child :a="a" :b="b" :c="c" :d="d" v-bind="{x:100,y:200}" :updateA="updateA"/>
   </div>
 </template>
