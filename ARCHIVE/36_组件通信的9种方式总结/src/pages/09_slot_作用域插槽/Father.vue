@@ -3,6 +3,8 @@
     <h3>父组件</h3>
     <div class="content">
       <Game>
+
+        <!-- ATTENTION: 父组件可以通过v-slog:sname="data" 访问子组件的数据 -->
         <template v-slot="params">
           <ul>
             <li v-for="y in params.youxi" :key="y.id">

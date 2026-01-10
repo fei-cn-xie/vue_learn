@@ -5,7 +5,10 @@
       <!-- 1. 默认插槽 -->
        <!-- 2. 具名插槽 -->
         <!-- 3. 作用域插槽 -->
+        
+      <!-- ATTENTION: 默认插槽不需要指定插槽Id -->
       <Game :title="games"> 
+        <!-- Game标签包裹的内容会插入到Game组件的slot标签位置 -->
         <ul>
           <li v-for="value in games.data">{{ value }}</li>
         </ul>
